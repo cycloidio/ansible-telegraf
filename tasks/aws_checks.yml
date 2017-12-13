@@ -23,4 +23,4 @@
     mode: u+rxw,g+rx,o+rx
   with_items:
     - check_lb_certs.py
-
+    - check_ses.py
