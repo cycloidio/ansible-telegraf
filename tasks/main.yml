@@ -6,6 +6,8 @@
     # Because of ansible but we can't use same var name, so adding cycloid_ prefix
     telegraf_agent_output: "{{ cycloid_telegraf_agent_output }}"
     telegraf_agent_logfile: "{{ cycloid_telegraf_agent_logfile }}"
+    telegraf_agent_interval: "{{ cycloid_telegraf_agent_interval }}"
+    telegraf_agent_flush_interval: "{{ cycloid_telegraf_agent_flush_interval }}"
 
 
 - include: aws_checks.yml
