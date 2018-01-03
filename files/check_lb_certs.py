@@ -31,7 +31,7 @@ def init_argparse():
                         help="AWS Region (defaults to eu-west-1).",
                         default="eu-west-1",
                         type=str)
-    parser.add_argument("--verbose",
+    parser.add_argument("-v", "--verbose",
                         help="Provide SSL/TLS certificate expiration details even when OK",
                         action='store_true')
     return parser.parse_args()
@@ -98,7 +98,7 @@ def load_cert(conn, cert):
         return None
 
     return OpenSSL.crypto.load_certificate(OpenSSL.crypto.FILETYPE_PEM, raw_cert)
-    
+
 
 if __name__ == "__main__":
 
@@ -164,5 +164,5 @@ if __name__ == "__main__":
         # information as labels
         if entry['cert'] in uniq: continue
 
-        print "cert,cert_cn=%(cert_cn)s,cert=%(cert)s expire_days=%(expire)s" % entry
+        print "aws_lb_certs,cert_cn=%(cert_cn)s,cert=%(cert)s expire_days=%(expire)s" % entry
         uniq.append(entry['cert'])

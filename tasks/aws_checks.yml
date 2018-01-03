@@ -24,3 +24,5 @@
   with_items:
     - check_lb_certs.py
     - check_ses.py
+    - check_instance_events.py
+    - check_rds_events.py

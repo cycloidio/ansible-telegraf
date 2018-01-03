@@ -56,8 +56,8 @@ def get_reputation(name, level=0):
     if len(datapoints) == 0:
         return get_reputation(name, level+1)
     return datapoints[-1]
-    
-    
+
+
 if __name__ == "__main__":
     args = init_argparse()
     conn = Conn(region=args.aws_region)
@@ -89,16 +89,16 @@ if __name__ == "__main__":
     bounce = get_reputation("BounceRate")
     complaint = get_reputation("ComplaintRate")
 
-    print """ses enabled={enabled}
-ses max_send_rate={send[MaxSendRate]}
-ses,type=max quota={send[Max24HourSend]}
-ses,type=sent quota={send[SentLast24Hours]}
-ses,type=attempts delivery={live[DeliveryAttempts]}
-ses,type=bounces delivery={live[Bounces]}
-ses,type=complaints delivery={live[Complaints]}
-ses,type=rejects delivery={live[Rejects]}
-ses,type=bounces reputation={bounce[Average]}
-ses,type=complaints reputation={complaint[Average]}""".format(
+    print """aws_ses enabled={enabled}
+aws_ses max_send_rate={send[MaxSendRate]}
+aws_ses,type=max quota={send[Max24HourSend]}
+aws_ses,type=sent quota={send[SentLast24Hours]}
+aws_ses,type=attempts delivery={live[DeliveryAttempts]}
+aws_ses,type=bounces delivery={live[Bounces]}
+aws_ses,type=complaints delivery={live[Complaints]}
+aws_ses,type=rejects delivery={live[Rejects]}
+aws_ses,type=bounces reputation={bounce[Average]}
+aws_ses,type=complaints reputation={complaint[Average]}""".format(
         enabled=int(enabled["Enabled"]),
         send=send_statistics,
         live=live_statistics,
