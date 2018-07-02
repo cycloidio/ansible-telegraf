@@ -16,11 +16,12 @@ cycloid_telegraf_agent_flush_interval: 60
 cycloid_telegraf_plugins_default:
   - plugin: cpu
     config:
-      - percpu = true
+        - percpu = true
   - plugin: disk
   - plugin: io
   - plugin: mem
   - plugin: net
+    config:
       - interfaces = ["eth*", "enp*", "lo"]
   - plugin: system
   - plugin: swap
