@@ -12,3 +12,18 @@ cycloid_telegraf_agent_logfile: /var/log/telegraf/telegraf.log
 
 cycloid_telegraf_agent_interval: 60
 cycloid_telegraf_agent_flush_interval: 60
+
+cycloid_telegraf_plugins_default:
+  - plugin: cpu
+    config:
+      - percpu = true
+  - plugin: disk
+  - plugin: io
+  - plugin: mem
+  - plugin: net
+      - interfaces = ["eth*", "enp*", "lo"]
+  - plugin: system
+  - plugin: swap
+  - plugin: netstat
+  - plugin: processes
+  - plugin: kernel
