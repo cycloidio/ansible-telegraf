@@ -1,0 +1,18 @@
+---
+
+- name: "Install requirements pip packages"
+  pip:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - requests
+
+- name: "Copy Cycloid checks"
+  copy:
+    src: "{{ item }}"
+    dest: /usr/bin/
+    owner: root
+    group: root
+    mode: u+rxw,g+rx,o+rx
+  with_items:
+    - check_eventstore.py

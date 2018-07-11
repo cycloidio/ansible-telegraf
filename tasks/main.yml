@@ -10,5 +10,8 @@
     telegraf_agent_flush_interval: "{{ cycloid_telegraf_agent_flush_interval }}"
     telegraf_plugins_default: "{{ cycloid_telegraf_plugins_default }}"
 
+- include: extra_checks.yml
+  when: telegraf_extra_checks
+
 - include: aws_checks.yml
   when: telegraf_aws_checks
