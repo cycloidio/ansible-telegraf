@@ -44,7 +44,7 @@ def get_gossip(url):
 
 def script_error(reason="Check internal error"):
     print "eventstore,reason=%s check_error=1"  % reason
-    exit(1)
+    exit(0)
     
 
 def check_nodes_alive(gossip):
