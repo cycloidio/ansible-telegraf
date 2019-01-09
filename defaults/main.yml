@@ -1,5 +1,8 @@
 ---
 
+# temporary fixing the version
+telegraf_agent_version: 1.9.2
+
 telegraf_aws_checks: false
 telegraf_extra_checks: false
 
