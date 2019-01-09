@@ -9,6 +9,7 @@
     telegraf_agent_interval: "{{ cycloid_telegraf_agent_interval }}"
     telegraf_agent_flush_interval: "{{ cycloid_telegraf_agent_flush_interval }}"
     telegraf_plugins_default: "{{ cycloid_telegraf_plugins_default }}"
+    telegraf_agent_version: "{{cycloid_telegraf_agent_version}}"
 
 - include: extra_checks.yml
   when: telegraf_extra_checks
