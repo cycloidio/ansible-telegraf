@@ -1,7 +1,7 @@
 ---
 
 # temporary fixing the version
-cycloid_telegraf_agent_version: 1.9.5
+cycloid_telegraf_agent_version: 1.12.0
 
 # When set to latest, telegraf_agent_version will be ignored. (if you want a fixed version, use present)
 cycloid_telegraf_agent_package_state: latest
