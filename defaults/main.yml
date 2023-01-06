@@ -1,6 +1,6 @@
 ---
 
-# temporary fixing the version
+# Forcing package version because the version 1.25 fail to start and brake ansible. Linked to https://github.com/influxdata/telegraf/pull/12405
 cycloid_telegraf_agent_version: 1.24.4
 
 # When set to latest, telegraf_agent_version will be ignored. (if you want a fixed version, use present)
