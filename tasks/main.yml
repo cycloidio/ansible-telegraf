@@ -1,5 +1,4 @@
 ---
-
 - include_role:
     name: dj-wasabi.telegraf
   vars:
@@ -12,8 +11,8 @@
     telegraf_agent_version: "{{cycloid_telegraf_agent_version}}"
     telegraf_agent_package_state: "{{ cycloid_telegraf_agent_package_state }}"
 
-- include: extra_checks.yml
+- include_tasks: extra_checks.yml
   when: telegraf_extra_checks
 
-- include: aws_checks.yml
+- include_tasks: aws_checks.yml
   when: telegraf_aws_checks
